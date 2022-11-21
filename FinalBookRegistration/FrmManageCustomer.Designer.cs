@@ -50,9 +50,9 @@
             this.lblCustomerForm.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblCustomerForm.Location = new System.Drawing.Point(171, 9);
             this.lblCustomerForm.Name = "lblCustomerForm";
-            this.lblCustomerForm.Size = new System.Drawing.Size(296, 32);
+            this.lblCustomerForm.Size = new System.Drawing.Size(287, 32);
             this.lblCustomerForm.TabIndex = 0;
-            this.lblCustomerForm.Text = "Customer Managing Form";
+            this.lblCustomerForm.Text = "Customer Managing Tool";
             // 
             // lblTitle
             // 
@@ -189,7 +189,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblCustomerForm);
             this.Name = "FrmManageCustomer";
-            this.Text = "FrmAddCustomer";
+            this.Text = "Customer Manager";
             this.Load += new System.EventHandler(this.FrmManageCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

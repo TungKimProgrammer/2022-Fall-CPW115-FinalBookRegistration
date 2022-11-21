@@ -24,6 +24,7 @@ namespace FinalBookRegistration
         public FrmManageCustomer(Customer c)
         {
             InitializeComponent(); // creates form controls
+
             btnAddCustomer.Text = "Update Customer";
             txtTitle.Text = c.Title;
             txtFirstName.Text = c.FirstName;
@@ -62,7 +63,7 @@ namespace FinalBookRegistration
                 string title = Validator.FormalizeName(txtTitle.Text);
                 string firsName = Validator.FormalizeName(txtFirstName.Text);
                 string lastName = Validator.FormalizeName(txtLastName.Text);
-                DateTime dob = dtpDOB.Value;
+                DateTime dob = dtpDOB.Value.Date;
 
                 Customer newCus = new Customer(title, firsName, lastName, dob);
 
@@ -175,7 +176,7 @@ namespace FinalBookRegistration
                 selectedCustomer.Title = Validator.FormalizeName(txtTitle.Text);
                 selectedCustomer.FirstName = Validator.FormalizeName(txtFirstName.Text);
                 selectedCustomer.LastName = Validator.FormalizeName(txtLastName.Text);
-                selectedCustomer.DateOfBirth = dtpDOB.Value;
+                selectedCustomer.DateOfBirth = dtpDOB.Value.Date;
                
                 CustomerDB.Update(selectedCustomer);
                 PoplulateCustomerListBox();

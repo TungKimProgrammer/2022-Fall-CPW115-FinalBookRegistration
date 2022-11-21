@@ -32,7 +32,7 @@ namespace FinalBookRegistration
         
         public override string ToString()
         {
-            return Title + " " + LastName + ", " + FirstName + " " + DateOfBirth;
+            return Title + " " + LastName + ", " + FirstName + " " + DateOfBirth.ToShortDateString();
         }
     }
 }

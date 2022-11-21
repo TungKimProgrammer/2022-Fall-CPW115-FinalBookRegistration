@@ -49,9 +49,9 @@
             this.lblBookForm.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblBookForm.Location = new System.Drawing.Point(236, 9);
             this.lblBookForm.Name = "lblBookForm";
-            this.lblBookForm.Size = new System.Drawing.Size(248, 32);
+            this.lblBookForm.Size = new System.Drawing.Size(239, 32);
             this.lblBookForm.TabIndex = 0;
-            this.lblBookForm.Text = "Book Managing Form";
+            this.lblBookForm.Text = "Book Managing Tool";
             // 
             // lblISBN
             // 
@@ -178,7 +178,7 @@
             this.Controls.Add(this.lblISBN);
             this.Controls.Add(this.lblBookForm);
             this.Name = "FrmManageBook";
-            this.Text = "FrmManageBook";
+            this.Text = "Book Manager";
             this.Load += new System.EventHandler(this.FrmManageBook_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,7 +199,6 @@
         private Label lblErrMsg;
         private Label lblNotice;
         private Button btnDeleteBook;
-        private Button bnUpdateBook;
         private Button btnUpdateBook;
     }
 }

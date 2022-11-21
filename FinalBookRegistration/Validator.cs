@@ -49,7 +49,7 @@ namespace FinalBookRegistration
             isbn = RemoveAllWhiteSpaces(isbn);
             // remove any dashes within the isbn
             isbn = Regex.Replace(isbn, "-", "");
-            return IsDigitsAndDashesOnly(isbn) && isbn.Length <= 13;
+            return IsDigitsOnly(isbn) && isbn.Length <= 13;
         }
 
         public static bool IsExistedISBN(string isbn)
@@ -90,16 +90,19 @@ namespace FinalBookRegistration
         /// </summary>
         /// <param name="str">string to be checked</param>
         /// <returns>true if <paramref name="str"/> contains only digits or dashes</returns>
-        public static bool IsDigitsAndDashesOnly(string str)
+        public static bool IsDigitsOnly(string str)
         {
+            // remove any dashes within the string
+            str = Regex.Replace(str, "-", "");
+
+
             foreach (char c in str)
             {
-                if ( ('0' <= c && c <= '9') || c == '-' ) // can use c.IsDigit() but slower
-                {
-                    return true;
-                }
+                if (c < '0' || c > '9') // can use c.IsDigit() but slower
+                    return false;
             }
-            return false;
+
+            return true;
         }
 
         /// <summary>

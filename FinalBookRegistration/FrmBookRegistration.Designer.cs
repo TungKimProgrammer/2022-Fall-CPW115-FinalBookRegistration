@@ -36,6 +36,8 @@
             this.btnManageCustomer = new System.Windows.Forms.Button();
             this.btnManageBook = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnManageRegistration = new System.Windows.Forms.Button();
+            this.lblErrMsg = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbxCustomerName
@@ -47,6 +49,7 @@
             this.cbxCustomerName.Size = new System.Drawing.Size(200, 23);
             this.cbxCustomerName.TabIndex = 1;
             this.cbxCustomerName.Tag = "";
+            this.cbxCustomerName.SelectedIndexChanged += new System.EventHandler(this.cbxCustomerName_SelectedIndexChanged);
             // 
             // cbxBookTitle
             // 
@@ -72,6 +75,7 @@
             this.btnRegister.TabIndex = 3;
             this.btnRegister.Text = "&Register Book";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // lblBookRegistration
             // 
@@ -86,7 +90,7 @@
             // 
             this.btnManageCustomer.Location = new System.Drawing.Point(280, 105);
             this.btnManageCustomer.Name = "btnManageCustomer";
-            this.btnManageCustomer.Size = new System.Drawing.Size(153, 86);
+            this.btnManageCustomer.Size = new System.Drawing.Size(153, 61);
             this.btnManageCustomer.TabIndex = 4;
             this.btnManageCustomer.Text = "Manage &Customer";
             this.btnManageCustomer.UseVisualStyleBackColor = true;
@@ -94,9 +98,9 @@
             // 
             // btnManageBook
             // 
-            this.btnManageBook.Location = new System.Drawing.Point(280, 222);
+            this.btnManageBook.Location = new System.Drawing.Point(280, 178);
             this.btnManageBook.Name = "btnManageBook";
-            this.btnManageBook.Size = new System.Drawing.Size(153, 86);
+            this.btnManageBook.Size = new System.Drawing.Size(153, 61);
             this.btnManageBook.TabIndex = 5;
             this.btnManageBook.Text = "Manage &Book";
             this.btnManageBook.UseVisualStyleBackColor = true;
@@ -111,11 +115,33 @@
             this.btnCancel.Text = "Canc&el";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // btnManageRegistration
+            // 
+            this.btnManageRegistration.Location = new System.Drawing.Point(280, 251);
+            this.btnManageRegistration.Name = "btnManageRegistration";
+            this.btnManageRegistration.Size = new System.Drawing.Size(153, 61);
+            this.btnManageRegistration.TabIndex = 7;
+            this.btnManageRegistration.Text = "Manage Registr&ation";
+            this.btnManageRegistration.UseVisualStyleBackColor = true;
+            this.btnManageRegistration.Click += new System.EventHandler(this.btnManageRegistration_Click);
+            // 
+            // lblErrMsg
+            // 
+            this.lblErrMsg.AutoSize = true;
+            this.lblErrMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblErrMsg.Location = new System.Drawing.Point(38, 274);
+            this.lblErrMsg.Name = "lblErrMsg";
+            this.lblErrMsg.Size = new System.Drawing.Size(38, 15);
+            this.lblErrMsg.TabIndex = 8;
+            this.lblErrMsg.Text = "label1";
+            // 
             // FrmBookRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 400);
+            this.Controls.Add(this.lblErrMsg);
+            this.Controls.Add(this.btnManageRegistration);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnManageBook);
             this.Controls.Add(this.btnManageCustomer);
@@ -142,5 +168,7 @@
         private Button btnManageCustomer;
         private Button btnManageBook;
         private Button btnCancel;
+        private Button btnManageRegistration;
+        private Label lblErrMsg;
     }
 }
