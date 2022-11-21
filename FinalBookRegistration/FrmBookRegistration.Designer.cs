@@ -30,36 +30,39 @@
         {
             this.cbxCustomerName = new System.Windows.Forms.ComboBox();
             this.cbxBookTitle = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpRegistration = new System.Windows.Forms.DateTimePicker();
             this.btnRegister = new System.Windows.Forms.Button();
             this.lblBookRegistration = new System.Windows.Forms.Label();
-            this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.btnAddBook = new System.Windows.Forms.Button();
+            this.btnManageCustomer = new System.Windows.Forms.Button();
+            this.btnManageBook = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbxCustomerName
             // 
+            this.cbxCustomerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCustomerName.FormattingEnabled = true;
             this.cbxCustomerName.Location = new System.Drawing.Point(38, 105);
             this.cbxCustomerName.Name = "cbxCustomerName";
             this.cbxCustomerName.Size = new System.Drawing.Size(200, 23);
             this.cbxCustomerName.TabIndex = 1;
+            this.cbxCustomerName.Tag = "";
             // 
             // cbxBookTitle
             // 
+            this.cbxBookTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBookTitle.FormattingEnabled = true;
             this.cbxBookTitle.Location = new System.Drawing.Point(38, 171);
             this.cbxBookTitle.Name = "cbxBookTitle";
             this.cbxBookTitle.Size = new System.Drawing.Size(200, 23);
             this.cbxBookTitle.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtpRegistration
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(38, 237);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpRegistration.Location = new System.Drawing.Point(38, 237);
+            this.dtpRegistration.Name = "dtpRegistration";
+            this.dtpRegistration.Size = new System.Drawing.Size(200, 23);
+            this.dtpRegistration.TabIndex = 2;
             // 
             // btnRegister
             // 
@@ -79,23 +82,25 @@
             this.lblBookRegistration.TabIndex = 0;
             this.lblBookRegistration.Text = "Book Registration";
             // 
-            // btnAddCustomer
+            // btnManageCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(280, 105);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(153, 86);
-            this.btnAddCustomer.TabIndex = 4;
-            this.btnAddCustomer.Text = "Add &Customer";
-            this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnManageCustomer.Location = new System.Drawing.Point(280, 105);
+            this.btnManageCustomer.Name = "btnManageCustomer";
+            this.btnManageCustomer.Size = new System.Drawing.Size(153, 86);
+            this.btnManageCustomer.TabIndex = 4;
+            this.btnManageCustomer.Text = "Manage &Customer";
+            this.btnManageCustomer.UseVisualStyleBackColor = true;
+            this.btnManageCustomer.Click += new System.EventHandler(this.btnManageCustomer_Click);
             // 
-            // btnAddBook
+            // btnManageBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(280, 222);
-            this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(153, 86);
-            this.btnAddBook.TabIndex = 5;
-            this.btnAddBook.Text = "Add &Book";
-            this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnManageBook.Location = new System.Drawing.Point(280, 222);
+            this.btnManageBook.Name = "btnManageBook";
+            this.btnManageBook.Size = new System.Drawing.Size(153, 86);
+            this.btnManageBook.TabIndex = 5;
+            this.btnManageBook.Text = "Manage &Book";
+            this.btnManageBook.UseVisualStyleBackColor = true;
+            this.btnManageBook.Click += new System.EventHandler(this.btnManageBook_Click);
             // 
             // btnCancel
             // 
@@ -112,15 +117,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 400);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAddBook);
-            this.Controls.Add(this.btnAddCustomer);
+            this.Controls.Add(this.btnManageBook);
+            this.Controls.Add(this.btnManageCustomer);
             this.Controls.Add(this.lblBookRegistration);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpRegistration);
             this.Controls.Add(this.cbxBookTitle);
             this.Controls.Add(this.cbxCustomerName);
             this.Name = "FrmBookRegistration";
             this.Text = "Book Registration";
+            this.Load += new System.EventHandler(this.FrmBookRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,11 +136,11 @@
 
         private ComboBox cbxCustomerName;
         private ComboBox cbxBookTitle;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpRegistration;
         private Button btnRegister;
         private Label lblBookRegistration;
-        private Button btnAddCustomer;
-        private Button btnAddBook;
+        private Button btnManageCustomer;
+        private Button btnManageBook;
         private Button btnCancel;
     }
 }
