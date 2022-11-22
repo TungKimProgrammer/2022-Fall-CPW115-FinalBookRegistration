@@ -25,18 +25,30 @@ namespace FinalBookRegistration
         {
             InitializeComponent(); // creates form controls
 
+            /* Joe's Code
             btnAddCustomer.Text = "Update Customer";
             txtTitle.Text = c.Title;
             txtFirstName.Text = c.FirstName;
             txtLastName.Text = c.LastName;
             dtpDOB.Value = c.DateOfBirth;
+            */
         }
 
         private void FrmManageCustomer_Load(object sender, EventArgs e)
         {
             PoplulateCustomerListBox();
+
+            // disable tab index of some controls
+            lblCustomerForm.TabStop = false;
+            lblTitle.TabStop = false;
+            lblFirstName.TabStop = false;
+            lblLastName.TabStop = false;
+            lblDOB.TabStop = false;
         }
 
+        /// <summary>
+        /// Populates a listbox of Customers in from database
+        /// </summary>
         private void PoplulateCustomerListBox()
         {
             lstCustomers.Items.Clear();

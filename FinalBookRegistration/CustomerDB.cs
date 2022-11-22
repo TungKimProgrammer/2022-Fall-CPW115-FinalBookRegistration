@@ -193,6 +193,10 @@ namespace FinalBookRegistration
             return currCus;
         }
 
+        /// <summary>
+        /// Gets a list of Customers who have registrations
+        /// </summary>
+        /// <returns>List of Customers who have registrations</returns>
         public static List<Customer> GetCustomersWithRegistrations()
         {
             // Get connection

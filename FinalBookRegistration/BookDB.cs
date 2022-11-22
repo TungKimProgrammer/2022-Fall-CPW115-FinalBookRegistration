@@ -79,6 +79,10 @@ namespace FinalBookRegistration
             return books;
         }
 
+        /// <summary>
+        /// Get books with valid ISBN and Price
+        /// </summary>
+        /// <returns>List of Books with valid ISBN and Price</returns>
         public static List<Book> GetAllValidBooks()
         {
             // Get connection
@@ -165,6 +169,11 @@ namespace FinalBookRegistration
             return booksExcludingISBN;
         }
 
+        /// <summary>
+        /// Gets a list of Books not yet registered by a Customer
+        /// </summary>
+        /// <param name="customerID">CustomerID of a Customer</param>
+        /// <returns>List of Books not yet registered by a Customer</returns>
         public static List<Book> GetBooksNotYetRegisterByCustomerID(int customerID)
         {
             /*
@@ -185,7 +194,7 @@ namespace FinalBookRegistration
                                     "FROM Book " +
                                     "WHERE ISBN NOT IN (SELECT ISBN " +
                                     "                   FROM Registration " +
-                                    "                   WHERE CustomerID =  @customerID) " +
+                                    "                   WHERE CustomerID = @customerID) " +
                                     "ORDER BY Title";
             selectCmd.Parameters.AddWithValue("@customerID", customerID);
 
@@ -285,6 +294,11 @@ namespace FinalBookRegistration
             }
         }
 
+        /// <summary>
+        /// Gets a book by ISBN from Database
+        /// </summary>
+        /// <param name="isbn">ISBN of a Book</param>
+        /// <returns>Book with given ISBN</returns>
         public static Book GetBook(string isbn)
         {
             // Get connection

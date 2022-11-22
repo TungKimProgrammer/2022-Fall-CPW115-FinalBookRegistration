@@ -9,8 +9,10 @@ namespace FinalBookRegistration
 {
     static class BookRegistrationDB
     {
-        //public static int rows;
-
+        /// <summary>
+        /// Adds Registration to database
+        /// </summary>
+        /// <param name="r">Registration to be added</param>
         public static void Add(Registration r)
         {
             using SqlConnection con = DBHelper.GetDatabaseConnection("BookRegistration");
@@ -32,6 +34,11 @@ namespace FinalBookRegistration
             insertCmd.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Deletes a Registration from database
+        /// </summary>
+        /// <param name="customerID"></param>
+        /// <param name="isbn"></param>
         public static void Delete(int customerID, string isbn)
         {
             // use "using" statement to close connection automatically
@@ -53,6 +60,10 @@ namespace FinalBookRegistration
             
         }
 
+        /// <summary>
+        /// Gets a list of all Registrations
+        /// </summary>
+        /// <returns>List of registrations</returns>
         public static List<Registration> GetAllRegistrations()
         {
             // Get connection
@@ -87,6 +98,11 @@ namespace FinalBookRegistration
             return registrations;
         }
 
+        /// <summary>
+        /// Gets a list of registrations of a Customer
+        /// </summary>
+        /// <param name="customerID">CustomerID of the Customer to get list</param>
+        /// <returns>List of registrations of a Customer</returns>
         public static List<Registration> GetRegistrationsByCustomerID(int customerID)
         {
             // Get connection
@@ -122,6 +138,11 @@ namespace FinalBookRegistration
             return registrationsByCustomerID;
         }
 
+        /// <summary>
+        /// Get a registration from database
+        /// </summary>
+        /// <param name="r">Registration to be retrieved</param>
+        /// <returns></returns>
         public static Registration GetRegistration(Registration r)
         {
             Registration currReg = GetRegistration(r.CustomerID, r.ISBN);
@@ -129,6 +150,12 @@ namespace FinalBookRegistration
             return currReg;
         }
 
+        /// <summary>
+        /// Get a registration from database by CustomerID and ISBN
+        /// </summary>
+        /// <param name="customerID">CustomerID of the Customer</param>
+        /// <param name="isbn">ISBN of the book</param>
+        /// <returns>Registration</returns>
         public static Registration GetRegistration(int customerID, string isbn)
         {
             // Get connection
@@ -156,7 +183,12 @@ namespace FinalBookRegistration
  
             return currReg;
         }
-
+        
+        /// <summary>
+        /// Add a registration to database
+        /// </summary>
+        /// <param name="r">Registration to be added</param>
+        /// <returns>True if adding successfully</returns>
         public static bool RegisterBook(Registration r)
         {
             using SqlConnection con = DBHelper.GetDatabaseConnection("BookRegistration");

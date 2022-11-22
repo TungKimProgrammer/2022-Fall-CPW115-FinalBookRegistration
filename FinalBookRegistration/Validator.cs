@@ -68,6 +68,13 @@ namespace FinalBookRegistration
             return isExisted;
         }
 
+        /// <summary>
+        /// Standardizes the ISBN
+        /// Removes dashes and white spaces
+        /// Adds prefix 0 to make 13 char length
+        /// </summary>
+        /// <param name="isbn">ISBN to make standard</param>
+        /// <returns>Standard ISBN</returns>
         public static string ToStandardISBN(string isbn)
         {
             // remove all leading and trailing white-space characters
@@ -123,8 +130,6 @@ namespace FinalBookRegistration
             // Regex.Replace(input, @"\s+", "");
             return input;
         }
-
-
 
         /// <summary>
         /// fomalize a single/multiple-word name/title

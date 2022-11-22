@@ -17,13 +17,21 @@ namespace FinalBookRegistration
         {
             InitializeComponent();
         }
-
+                
         private void ManageRegistration_Load(object sender, EventArgs e)
         {
             PoplulateRegistrationListBox();
             PoplulateCustomerListBox();
+
+            // disable tab index of some controls
+            lblRegistrationManagingTool.TabStop = false;
+            grbCustomersAndBooks.TabStop = false;
+            grbRegistrations.TabStop = false;
         }
 
+        /// <summary>
+        /// Populates a listbox for all Registrations
+        /// </summary>
         private void PoplulateRegistrationListBox()
         {
             lstRegistrations.Items.Clear();
@@ -49,6 +57,9 @@ namespace FinalBookRegistration
             */
         }
 
+        /// <summary>
+        /// Populates a listbox of all Customers who have registrations
+        /// </summary>
         private void PoplulateCustomerListBox()
         {
             lstCustomers.Items.Clear();
@@ -64,6 +75,10 @@ namespace FinalBookRegistration
             btnRemoveRegisteredBook.Enabled = false;
         }
 
+        /// <summary>
+        /// Populates a listbox of registered Books of a selected Customer 
+        /// </summary>
+        /// <param name="customerID"></param>
         private void PoplulateBooksAndRegDateListBox(int customerID)
         {
             lstBooksAndRegDate.Items.Clear();
@@ -85,7 +100,7 @@ namespace FinalBookRegistration
                 MessageBox.Show("Please select a customer to view registered books!");
                 return;
             }
-
+            btnRemoveRegisteredBook.Enabled = false;
             Customer selectedCustomer = lstCustomers.SelectedItem as Customer;
             PoplulateBooksAndRegDateListBox(selectedCustomer.CustomerID);
         }
@@ -126,6 +141,7 @@ namespace FinalBookRegistration
             PoplulateRegistrationListBox();
             PoplulateCustomerListBox();
             lstBooksAndRegDate.Items.Clear();
+            lstRegistrations.Focus();
         }
 
         private void btnRemoveRegisteredBook_Click(object sender, EventArgs e)
@@ -153,6 +169,7 @@ namespace FinalBookRegistration
             PoplulateRegistrationListBox();
             PoplulateCustomerListBox();
             lstBooksAndRegDate.Items.Clear();
+            lstCustomers.Focus();
         }
 
         private void lstBooksAndRegDate_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,6 +178,7 @@ namespace FinalBookRegistration
             if (lstBooksAndRegDate.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a book to remove the registration!");
+                btnRemoveRegisteredBook.Enabled = false;
                 return;
             }
 

@@ -48,16 +48,16 @@
             // 
             this.lblCustomerForm.AutoSize = true;
             this.lblCustomerForm.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblCustomerForm.Location = new System.Drawing.Point(171, 9);
+            this.lblCustomerForm.Location = new System.Drawing.Point(177, 12);
             this.lblCustomerForm.Name = "lblCustomerForm";
-            this.lblCustomerForm.Size = new System.Drawing.Size(287, 32);
+            this.lblCustomerForm.Size = new System.Drawing.Size(366, 32);
             this.lblCustomerForm.TabIndex = 0;
-            this.lblCustomerForm.Text = "Customer Managing Tool";
+            this.lblCustomerForm.Text = "Customer Managing Application";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(53, 62);
+            this.lblTitle.Location = new System.Drawing.Point(16, 64);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(29, 15);
             this.lblTitle.TabIndex = 1;
@@ -65,15 +65,15 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(131, 59);
+            this.txtTitle.Location = new System.Drawing.Point(94, 61);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(200, 23);
-            this.txtTitle.TabIndex = 2;
+            this.txtTitle.TabIndex = 0;
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(53, 102);
+            this.lblFirstName.Location = new System.Drawing.Point(16, 104);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(64, 15);
             this.lblFirstName.TabIndex = 3;
@@ -81,15 +81,15 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(131, 99);
+            this.txtFirstName.Location = new System.Drawing.Point(94, 101);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(200, 23);
-            this.txtFirstName.TabIndex = 4;
+            this.txtFirstName.TabIndex = 1;
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(53, 142);
+            this.lblLastName.Location = new System.Drawing.Point(16, 144);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(63, 15);
             this.lblLastName.TabIndex = 5;
@@ -97,15 +97,15 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(131, 139);
+            this.txtLastName.Location = new System.Drawing.Point(94, 141);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(200, 23);
-            this.txtLastName.TabIndex = 6;
+            this.txtLastName.TabIndex = 2;
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(53, 182);
+            this.lblDOB.Location = new System.Drawing.Point(16, 184);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(73, 15);
             this.lblDOB.TabIndex = 7;
@@ -114,18 +114,18 @@
             // dtpDOB
             // 
             this.dtpDOB.CustomFormat = "mm/dd/yyyy";
-            this.dtpDOB.Location = new System.Drawing.Point(131, 176);
+            this.dtpDOB.Location = new System.Drawing.Point(94, 178);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(200, 23);
-            this.dtpDOB.TabIndex = 8;
+            this.dtpDOB.TabIndex = 3;
             this.dtpDOB.Value = new System.DateTime(2022, 11, 19, 20, 59, 48, 0);
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(372, 58);
+            this.btnAddCustomer.Location = new System.Drawing.Point(16, 248);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(119, 23);
-            this.btnAddCustomer.TabIndex = 9;
+            this.btnAddCustomer.Size = new System.Drawing.Size(139, 54);
+            this.btnAddCustomer.TabIndex = 4;
             this.btnAddCustomer.Text = "&Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
@@ -134,46 +134,47 @@
             // 
             this.lstCustomers.FormattingEnabled = true;
             this.lstCustomers.ItemHeight = 15;
-            this.lstCustomers.Location = new System.Drawing.Point(418, 123);
+            this.lstCustomers.Location = new System.Drawing.Point(317, 61);
             this.lstCustomers.Name = "lstCustomers";
-            this.lstCustomers.Size = new System.Drawing.Size(306, 229);
-            this.lstCustomers.TabIndex = 10;
+            this.lstCustomers.Size = new System.Drawing.Size(397, 244);
+            this.lstCustomers.TabIndex = 5;
             this.lstCustomers.SelectedIndexChanged += new System.EventHandler(this.lstCustomers_SelectedIndexChanged);
             // 
             // lblErrMsg
             // 
             this.lblErrMsg.AutoSize = true;
             this.lblErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblErrMsg.Location = new System.Drawing.Point(53, 223);
+            this.lblErrMsg.Location = new System.Drawing.Point(16, 216);
             this.lblErrMsg.Name = "lblErrMsg";
             this.lblErrMsg.Size = new System.Drawing.Size(0, 15);
             this.lblErrMsg.TabIndex = 11;
             // 
             // btnDeleteCustomer
             // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(656, 58);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(175, 279);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(119, 23);
-            this.btnDeleteCustomer.TabIndex = 12;
+            this.btnDeleteCustomer.TabIndex = 7;
             this.btnDeleteCustomer.Text = "&Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
             this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnUpdateCustomer
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(515, 58);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(175, 248);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(119, 23);
-            this.btnUpdateCustomer.TabIndex = 13;
+            this.btnUpdateCustomer.TabIndex = 6;
             this.btnUpdateCustomer.Text = "&Update Customer";
             this.btnUpdateCustomer.UseVisualStyleBackColor = true;
             this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // FrmManageCustomer
             // 
+            this.AcceptButton = this.btnAddCustomer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(730, 322);
             this.Controls.Add(this.btnUpdateCustomer);
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.lblErrMsg);

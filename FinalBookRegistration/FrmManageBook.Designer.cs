@@ -47,16 +47,16 @@
             // 
             this.lblBookForm.AutoSize = true;
             this.lblBookForm.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblBookForm.Location = new System.Drawing.Point(236, 9);
+            this.lblBookForm.Location = new System.Drawing.Point(179, 17);
             this.lblBookForm.Name = "lblBookForm";
-            this.lblBookForm.Size = new System.Drawing.Size(239, 32);
+            this.lblBookForm.Size = new System.Drawing.Size(318, 32);
             this.lblBookForm.TabIndex = 0;
-            this.lblBookForm.Text = "Book Managing Tool";
+            this.lblBookForm.Text = "Book Managing Application";
             // 
             // lblISBN
             // 
             this.lblISBN.AutoSize = true;
-            this.lblISBN.Location = new System.Drawing.Point(45, 64);
+            this.lblISBN.Location = new System.Drawing.Point(12, 75);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(32, 15);
             this.lblISBN.TabIndex = 1;
@@ -64,15 +64,15 @@
             // 
             // txtISBN
             // 
-            this.txtISBN.Location = new System.Drawing.Point(80, 60);
+            this.txtISBN.Location = new System.Drawing.Point(47, 71);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(132, 23);
-            this.txtISBN.TabIndex = 2;
+            this.txtISBN.TabIndex = 0;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(236, 64);
+            this.lblPrice.Location = new System.Drawing.Point(203, 75);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(33, 15);
             this.lblPrice.TabIndex = 3;
@@ -80,15 +80,15 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(275, 60);
+            this.txtPrice.Location = new System.Drawing.Point(242, 71);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 23);
-            this.txtPrice.TabIndex = 4;
+            this.txtPrice.TabIndex = 1;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(45, 101);
+            this.lblTitle.Location = new System.Drawing.Point(12, 112);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(29, 15);
             this.lblTitle.TabIndex = 5;
@@ -96,27 +96,27 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(80, 98);
+            this.txtTitle.Location = new System.Drawing.Point(47, 109);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(295, 23);
-            this.txtTitle.TabIndex = 6;
+            this.txtTitle.TabIndex = 2;
             // 
             // lstBooks
             // 
             this.lstBooks.FormattingEnabled = true;
             this.lstBooks.ItemHeight = 15;
-            this.lstBooks.Location = new System.Drawing.Point(45, 178);
+            this.lstBooks.Location = new System.Drawing.Point(12, 149);
             this.lstBooks.Name = "lstBooks";
-            this.lstBooks.Size = new System.Drawing.Size(262, 229);
-            this.lstBooks.TabIndex = 7;
+            this.lstBooks.Size = new System.Drawing.Size(659, 289);
+            this.lstBooks.TabIndex = 4;
             this.lstBooks.SelectedIndexChanged += new System.EventHandler(this.lstBooks_SelectedIndexChanged);
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(397, 60);
+            this.btnAddBook.Location = new System.Drawing.Point(365, 67);
             this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(110, 56);
-            this.btnAddBook.TabIndex = 8;
+            this.btnAddBook.Size = new System.Drawing.Size(90, 29);
+            this.btnAddBook.TabIndex = 3;
             this.btnAddBook.Text = "&Add Book";
             this.btnAddBook.UseVisualStyleBackColor = true;
             this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
@@ -125,7 +125,7 @@
             // 
             this.lblErrMsg.AutoSize = true;
             this.lblErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblErrMsg.Location = new System.Drawing.Point(45, 138);
+            this.lblErrMsg.Location = new System.Drawing.Point(365, 112);
             this.lblErrMsg.Name = "lblErrMsg";
             this.lblErrMsg.Size = new System.Drawing.Size(0, 15);
             this.lblErrMsg.TabIndex = 9;
@@ -134,36 +134,37 @@
             // 
             this.lblNotice.AutoSize = true;
             this.lblNotice.ForeColor = System.Drawing.Color.Blue;
-            this.lblNotice.Location = new System.Drawing.Point(45, 138);
+            this.lblNotice.Location = new System.Drawing.Point(365, 112);
             this.lblNotice.Name = "lblNotice";
             this.lblNotice.Size = new System.Drawing.Size(0, 15);
             this.lblNotice.TabIndex = 10;
             // 
             // btnDeleteBook
             // 
-            this.btnDeleteBook.Location = new System.Drawing.Point(643, 60);
+            this.btnDeleteBook.Location = new System.Drawing.Point(581, 67);
             this.btnDeleteBook.Name = "btnDeleteBook";
-            this.btnDeleteBook.Size = new System.Drawing.Size(110, 56);
-            this.btnDeleteBook.TabIndex = 11;
+            this.btnDeleteBook.Size = new System.Drawing.Size(90, 29);
+            this.btnDeleteBook.TabIndex = 6;
             this.btnDeleteBook.Text = "&Delete Book";
             this.btnDeleteBook.UseVisualStyleBackColor = true;
             this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
             // 
             // btnUpdateBook
             // 
-            this.btnUpdateBook.Location = new System.Drawing.Point(520, 60);
+            this.btnUpdateBook.Location = new System.Drawing.Point(473, 67);
             this.btnUpdateBook.Name = "btnUpdateBook";
-            this.btnUpdateBook.Size = new System.Drawing.Size(110, 56);
-            this.btnUpdateBook.TabIndex = 12;
+            this.btnUpdateBook.Size = new System.Drawing.Size(90, 29);
+            this.btnUpdateBook.TabIndex = 5;
             this.btnUpdateBook.Text = "&Update Book";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
             this.btnUpdateBook.Click += new System.EventHandler(this.bnUpdateBook_Click);
             // 
             // FrmManageBook
             // 
+            this.AcceptButton = this.btnAddBook;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(683, 450);
             this.Controls.Add(this.btnUpdateBook);
             this.Controls.Add(this.btnDeleteBook);
             this.Controls.Add(this.lblNotice);

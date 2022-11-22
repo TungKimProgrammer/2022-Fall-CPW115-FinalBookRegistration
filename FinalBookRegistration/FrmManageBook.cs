@@ -21,8 +21,18 @@ namespace FinalBookRegistration
         private void FrmManageBook_Load(object sender, EventArgs e)
         {
             PoplulateBookListBox();
+
+            // disable tab index of some controls
+            lblBookForm.TabStop = false;
+            lblISBN.TabStop = false;
+            lblPrice.TabStop = false;
+            lblErrMsg.TabStop = false;
+
         }
 
+        /// <summary>
+        /// Populates a listbox of Books from database
+        /// </summary>
         private void PoplulateBookListBox()
         {
             lstBooks.Items.Clear();
@@ -62,6 +72,10 @@ namespace FinalBookRegistration
             }
         }
 
+        /// <summary>
+        /// Validates input before adding to database
+        /// </summary>
+        /// <returns>True when all conditions are met</returns>
         private bool IsValid()
         {
             if (IsValidInput())
