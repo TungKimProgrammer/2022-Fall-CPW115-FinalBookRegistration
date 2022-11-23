@@ -80,7 +80,7 @@ namespace FinalBookRegistration
                 Customer newCus = new Customer(title, firsName, lastName, dob);
 
                 CustomerDB.Add(newCus);
-                MessageBox.Show($"{newCus.FullName} has been added succesfully!");
+                MessageBox.Show($"'{newCus.FullName}' has been added succesfully!");
                 PoplulateCustomerListBox();
                 clearTextbox();
             }
@@ -149,21 +149,32 @@ namespace FinalBookRegistration
 
             Customer selectedCustomer = (Customer)lstCustomers.SelectedItem;
 
+            int countRegistrationsGroupByCustomerID = BookRegistrationDB.CountRegistrationsGroupByCustomerID(selectedCustomer.CustomerID);
+
             try
             {
                 CustomerDB.Delete(selectedCustomer.CustomerID);
                 clearTextbox();
                 lblErrMsg.Text = "";
-                MessageBox.Show($"{selectedCustomer.FullName} has been deleted succesfully!");
+                MessageBox.Show($"'{selectedCustomer.FullName}' has been deleted succesfully!");
             }
             catch (ArgumentException)
             {
-                MessageBox.Show("That customer no longer exists");
+                MessageBox.Show($"'{selectedCustomer.FullName}' no longer exists");
                 PoplulateCustomerListBox();
             }
             catch (SqlException)
             {
-                MessageBox.Show("We are having server issues. Please try again later!");
+                if (countRegistrationsGroupByCustomerID > 0)
+                {
+                    MessageBox.Show($"'{selectedCustomer.FullName}' already has Registrations. \n" +
+                                    $"Please remove all Registrations for '{selectedCustomer.FullName}' first!");
+                }
+                else
+                {
+                    MessageBox.Show("We are having server issues. Please try again later!");
+                }
+                clearTextbox();
             }
 
             PoplulateCustomerListBox();
@@ -191,6 +202,7 @@ namespace FinalBookRegistration
                 selectedCustomer.DateOfBirth = dtpDOB.Value.Date;
                
                 CustomerDB.Update(selectedCustomer);
+                MessageBox.Show($"'{selectedCustomer.FullName}' has been updated successfully!");
                 PoplulateCustomerListBox();
                 clearTextbox();
             }

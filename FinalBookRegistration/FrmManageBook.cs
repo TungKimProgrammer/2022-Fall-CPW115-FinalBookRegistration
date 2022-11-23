@@ -64,7 +64,7 @@ namespace FinalBookRegistration
                 Book newBook = new Book(isbn, title, price);
 
                 BookDB.Add(newBook);
-                MessageBox.Show($"{newBook.Title} has been added succesfully!");
+                MessageBox.Show($"'{newBook.Title}' has been added succesfully!");
                 PoplulateBookListBox();
                 clearTextbox();
                 //System.Threading.Thread.Sleep(3000);
@@ -144,7 +144,7 @@ namespace FinalBookRegistration
             txtISBN.Focus();
             txtTitle.Text = "";
             txtPrice.Text = string.Empty;
-
+            txtISBN.Enabled = true;
         }
 
         private void btnDeleteBook_Click(object sender, EventArgs e)
@@ -159,21 +159,33 @@ namespace FinalBookRegistration
 
             Book selectedBook = lstBooks.SelectedItem as Book;
 
+            // count Registrations of selected Book
+            int countRegistrationsGroupByISBN = BookRegistrationDB.CountRegistrationsGroupByISBN(selectedBook.ISBN);
+
             try
             {
                 BookDB.Delete(selectedBook);
                 clearTextbox();
                 lblErrMsg.Text = "";
-                MessageBox.Show($"{selectedBook.Title} has been deleted succesfully!");
+                MessageBox.Show($"'{selectedBook.Title}' has been deleted succesfully!");
             }
             catch (ArgumentException)
             {
-                MessageBox.Show("That customer no longer exists");
+                MessageBox.Show($"'{selectedBook.Title}' no longer exists");
                 PoplulateBookListBox();
             }
             catch (SqlException)
             {
-                MessageBox.Show("We are having server issues. Please try again later!");
+                if (countRegistrationsGroupByISBN > 0)
+                {
+                    MessageBox.Show($"'{selectedBook.Title}' already has Registrations. \n" +
+                                    $"Please remove all Registrations for '{selectedBook.Title}' first!");
+                }
+                else
+                {
+                    MessageBox.Show("We are having server issues. Please try again later!");
+                }
+                clearTextbox();
             }
 
             PoplulateBookListBox();
@@ -200,6 +212,7 @@ namespace FinalBookRegistration
                 selectedBook.Title = Validator.FormalizeName(txtTitle.Text);
 
                 BookDB.Update(selectedBook);
+                MessageBox.Show($"'{selectedBook.Title}' has been updated successfully!");
                 PoplulateBookListBox();
                 clearTextbox();
                 
